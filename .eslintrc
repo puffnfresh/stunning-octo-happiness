@@ -1,0 +1,13 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype"
+  ],
+  "extends": "cleanjs",
+  "rules": {
+    "flowtype/no-weak-types": 2,
+    "flowtype/require-parameter-type": 2,
+    "flowtype/require-return-type": 2,
+    "flowtype/require-variable-type": 2
+  }
+}
