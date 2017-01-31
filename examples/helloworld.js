@@ -1,7 +1,7 @@
 var unit = require('../build/unit');
 var cont = require('../build/cont');
 
-function program(time, result) {
+function wait(time, result) {
     return function(f) {
         setTimeout(function() {
             f(result);
@@ -16,9 +16,6 @@ function log(arg) {
     };
 }
 
-cont.go(
-    cont.chain(
-        program(2000, "Hello world"),
-        log
-    )
-);
+var program = cont.chain(wait(2000, "Hello world"), log);
+
+cont.go(program);
