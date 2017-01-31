@@ -16,6 +16,6 @@ function log(arg) {
     };
 }
 
-var program = cont.chain(wait(2000, "Hello world"), log);
+var program = cont.forever(cont.chain(wait(2000, "Hello world"), log));
 
 cont.go(program);
